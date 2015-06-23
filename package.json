@@ -1,6 +1,6 @@
 {
   "name": "sc-redis-outbound",
-  "version": "0.0.2",
+  "version": "0.0.0",
   "description": "Redis adapter for SocketCluster",
   "main": "index.js",
   "scripts": {
