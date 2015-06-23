@@ -1,6 +1,8 @@
 language: node_js
 before_script: cd test/sc2 && npm install && cd ../..
 script: npm test
+services:
+ - redis
 node_js:
 - '0.11'
 - '0.10'
