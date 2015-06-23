@@ -2,6 +2,7 @@ SC-Redis-Outbound
 ======
 
 [![Travis](https://img.shields.io/travis/webcast-io/sc-redis-outbound.svg?style=flat-square)](https://travis-ci.org/webcast-io/sc-redis-outbound)
+[![Code Style](https://img.shields.io/badge/code%20style-standard-blue.svg?style=flat-square)](https://github.com/feross/standard)
 
 This is a Redis adaptor for SocketCluster: http://socketcluster.io/
 It allows you to interact with SocketCluster channels via Redis.
