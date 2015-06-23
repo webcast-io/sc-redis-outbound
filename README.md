@@ -68,20 +68,7 @@ publish pong '{"a":123, "b":456}'
 
 You should see the object appear in your browser's developer console (from SocketCluster).
 
-Note that SC-Redis messages always need to start with 'o:' (if the data is a JSON object) or 's:' (if data should be interpreted as a string).
 
- 
-## Contributing
-
-SC-Redis is currently 'experimental'. It still needs a bit of polishing before you can use it in production.
-TODO:
-- Need a way to add an optional password.
-- Better error logging.
-- Reconnect behavior (after Redis client connection drops out) - Not sure if this is necessary or Node Redis client already does that automatically?
-- It needs to do something about invalid message formats (for example with missing 'o:' or 's:' at the beginning).
-
-Pull requests are welcome.
- 
  
 ## License
 
