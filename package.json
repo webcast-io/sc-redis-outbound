@@ -4,7 +4,7 @@
   "description": "Redis adapter for SocketCluster",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha test/test.js"
   },
   "repository": {
     "type": "git",
@@ -23,5 +23,9 @@
   "homepage": "https://github.com/SocketCluster/sc-redis",
   "dependencies": {
     "redis": "0.12.1"
+  },
+  "devDependencies": {
+    "mocha": "^2.2.5",
+    "socketcluster-client": "^2.2.30"
   }
 }

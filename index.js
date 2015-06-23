@@ -10,6 +10,7 @@ module.exports.attach = function (store) {
   store.on('unsubscribe', subClient.unsubscribe.bind(subClient));
   
   subClient.on('message', function (channel, message) {
+    console.log('RECEIVED MESSAGE FROM STORE: ' + message)
     var sender = null;
     var data = JSON.parse(message)
     store.publish(channel, data);
