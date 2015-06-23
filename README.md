@@ -1,14 +1,16 @@
-SC-Redis
+SC-Redis-Outbound
 ======
 
 This is a Redis adaptor for SocketCluster: http://socketcluster.io/
 It allows you to interact with SocketCluster channels via Redis.
+This adapter is unidirectional only allowing publishing from Redis to SocketCluster Clients. Any publishes from SocketCluster clients should be ignored.
+Also assumes anything published to Redis is in JSON format.
 
 
 ## Install
 
 ```bash
-npm install sc-redis
+npm install sc-redis-outbound
 ```
 
 ## Usage
@@ -16,7 +18,7 @@ npm install sc-redis
 Put the following code inside the SocketCluster sample app - Inside **store.js**:
 
 ```js
-var scRedis = require('sc-redis');
+var scRedis = require('sc-redis-outbound');
 
 module.exports.run = function (store) {
   console.log('   >> Store PID:', process.pid);
@@ -31,7 +33,7 @@ Example (substitute with relevant values):
 var socketCluster = new SocketCluster({
   // ...
   storeOptions: {
-    host: '54.204.147.15',
+    host: '127.0.0.1',
     port: 6379
   }
 });
@@ -61,7 +63,7 @@ redis-cli
 Then inside the Redis prompt, you can enter:
 
 ```bash
-publish pong 'o:{"a":123, "b":456}'
+publish pong '{"a":123, "b":456}'
 ```
 
 You should see the object appear in your browser's developer console (from SocketCluster).
