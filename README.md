@@ -1,6 +1,8 @@
 SC-Redis-Outbound
 ======
 
+[![Travis](https://img.shields.io/travis/webcast-io/sc-redis-outbound.svg?style=flat-square)](https://travis-ci.org/webcast-io/sc-redis-outbound)
+
 This is a Redis adaptor for SocketCluster: http://socketcluster.io/
 It allows you to interact with SocketCluster channels via Redis.
 This adapter is unidirectional only allowing publishing from Redis to SocketCluster Clients. Any publishes from SocketCluster clients should be ignored.
