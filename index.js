@@ -1,18 +1,17 @@
-var redis = require('redis');
+var redis = require('redis')
 
 module.exports.attach = function (store) {
-  var options = store.options;
-  var instanceId = store.instanceId;
+  var options = store.options
+  var instanceId = store.instanceId
   
-  var subClient = redis.createClient(options.port, options.host, options);
+  var subClient = redis.createClient(options.port, options.host, options)
   
-  store.on('subscribe', subClient.subscribe.bind(subClient));
-  store.on('unsubscribe', subClient.unsubscribe.bind(subClient));
+  store.on('subscribe', subClient.subscribe.bind(subClient))
+  store.on('unsubscribe', subClient.unsubscribe.bind(subClient))
   
   subClient.on('message', function (channel, message) {
-    console.log('RECEIVED MESSAGE FROM STORE: ' + message)
     var sender = null;
     var data = JSON.parse(message)
     store.publish(channel, data);
-  });
-};
+  })
+}

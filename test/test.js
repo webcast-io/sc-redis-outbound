@@ -52,11 +52,10 @@ describe('sc2', function () {
       })
 
       setTimeout(function () {
-        thischannel.on('this-is-channel', console.log)
-
         redis.publish('this-is-channel', '23425', function (err) {
-          if (err) { return console.error(err.message); }
-          console.log('Message sent successfully');
+          if (err) {
+            return done(err)
+          }
         });
       }, 400)
 
