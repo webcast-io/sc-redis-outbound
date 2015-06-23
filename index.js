@@ -8,9 +8,6 @@ module.exports.attach = function (store) {
   
   store.on('subscribe', subClient.subscribe.bind(subClient));
   store.on('unsubscribe', subClient.unsubscribe.bind(subClient));
-
-  
-  var instanceIdRegex = /^[^\/]*\//;
   
   subClient.on('message', function (channel, message) {
     var sender = null;
